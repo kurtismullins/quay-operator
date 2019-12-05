@@ -1,0 +1,23 @@
+#
+#  A minimalist Quay deployment.
+#
+#  The superuser's credentials:
+#  - Username: quay
+#  - Password: password
+#
+
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: QuayEcosystem
+metadata:
+  name: example-quayecosystem
+spec:
+  quay:
+    imagePullSecretName: redhat-pull-secret
+    image: quay.io/quay/quay:v3.2.0-3
+    envVars:
+    - name: ENCRYPTED_ROBOT_TOKEN_MIGRATION_PHASE
+      value: new-installation
+    configEnvVars:
+    - name: ENCRYPTED_ROBOT_TOKEN_MIGRATION_PHASE
+      value: new-installation    
+    

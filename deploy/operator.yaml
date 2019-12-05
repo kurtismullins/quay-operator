@@ -15,7 +15,7 @@ spec:
       serviceAccountName: quay-operator
       containers:
         - name: quay-operator
-          image: quay.io/redhat-cop/quay-operator:v0.0.7
+          image: quay.io/ablock/quay-operator:24fc9be6feb81383db29beeff99097bd70dd54e2
           command:
             - quay-operator
           imagePullPolicy: Always
